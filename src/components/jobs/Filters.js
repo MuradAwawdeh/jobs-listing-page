@@ -8,7 +8,7 @@ const Filters = ({ handleFiltersChange }) => {
     const [selectedCountriesIds, setSelectedCountriesIds] = React.useState([]);
     const sectors = useSectors();
     const countries = useCountries();
-    const cities = useCities(selectedCountriesIds);
+    const cities = useCities([1]);
 
     const [sectorsCheckboxesState, setSectorsCheckboxesState] = React.useState(new Array(sectors.length).fill(false));
     const handleSectorsChange = (i) => {
@@ -48,17 +48,17 @@ const Filters = ({ handleFiltersChange }) => {
             if (citiesCheckboxesState[index]) selectedCitiesIds.push(city.id);
         });
 
-        console.log({
+        // console.log({
+        //     sectors: selectedSectorsIds,
+        //     countries: selectedCountriesIds,
+        //     cities: selectedCitiesIds
+        // })
+        handleFiltersChange({
             sectors: selectedSectorsIds,
-            countries: selectedCountriesIds,
+            countries: selected,
             cities: selectedCitiesIds
-        })
-        console.log(citiesCheckboxesState);
+        });
     }, [sectorsCheckboxesState, countriesCheckboxesState, citiesCheckboxesState]);
-
-    // React.useEffect(() => {
-    //     setCitiesCheckboxesState(new Array(cities.length).fill(false));
-    // }, [selectedCountriesIds]);
 
     return (
         <form className={styles.form}>

@@ -7,8 +7,18 @@ const useFetchJobs = () => {
     const [busy, setBusy] = React.useState(false);
     const [jobsData, setJobsData] = React.useState({jobs: []});
 
-    const addNewJob = () => {
-
+    const addNewJob = (job) => {
+        console.log(job)
+        setJobsData((currentJobs) => {
+            const jobs = [{
+                id: currentJobs.jobs.length + 1,
+                ...job
+            }, ...currentJobs.jobs];
+            return {
+                ...currentJobs,
+                jobs
+            }
+        });
     };
 
     const getJobs = async () => {

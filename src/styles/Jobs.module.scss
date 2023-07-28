@@ -7,10 +7,17 @@
         border: 1px solid lightgrey;
         padding: 1rem;
         overflow-y: auto;
+        display: none;
     }
     main {
         flex-grow: 1;
         background-color: rgb(241, 240, 240);
         overflow-y: auto;
+    }
+
+    @media(min-width: 700px) {
+        aside {
+            display: block;
+        }
     }
 }
