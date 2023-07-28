@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "countryId": 1,
+        "name": "Ramallah"
+    },
+    {
+        "id": 2,
+        "countryId": 2,
+        "name": "Amman"
+    },
+    {
+        "id": 3,
+        "countryId": 3,
+        "name": "Bieruit"
+    },
+    {
+        "id": 4,
+        "countryId": 4,
+        "name": "Riyad"
+    }
+]

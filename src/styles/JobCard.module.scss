@@ -1,0 +1,48 @@
+.container {
+    border: 1px solid rgb(43, 94, 138);
+    background-color: white;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    img {
+        width: 7rem;
+        height: 7rem;
+        background-position: center;
+    }
+}
+
+.content {
+    flex-grow: 1;
+    width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.4rem;
+}
+
+.description {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+    color: gray;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    h3 {
+      flex-grow: 1;
+    }
+}
+
+.iconsContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    svg {
+      cursor: pointer;
+    }
+}

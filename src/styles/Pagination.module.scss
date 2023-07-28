@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: 1rem;
+    margin-top: 2rem;
+    gap: 1rem;
+    div {
+        width: 2rem;
+        height: 2rem;
+        background-color: white;
+        border: 1px solid gray;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        &:hover {
+            background-color: rgb(84, 138, 189);
+            color: white;
+        }
+    }
+}
+
+div.selected {
+    pointer-events: none;
+    background-color: rgb(84, 138, 189);
+    color: white;
+}

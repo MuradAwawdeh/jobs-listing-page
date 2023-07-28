@@ -1,0 +1,16 @@
+.container {
+    height: 100%;
+    display: flex;
+    column-gap: 1rem;
+    aside {
+        width: 250px;
+        border: 1px solid lightgrey;
+        padding: 1rem;
+        overflow-y: auto;
+    }
+    main {
+        flex-grow: 1;
+        background-color: rgb(241, 240, 240);
+        overflow-y: auto;
+    }
+}
