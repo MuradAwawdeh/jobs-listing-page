@@ -11,7 +11,7 @@ const JobForm = ({ handleClose, handleAddNewJob, jobData = null }) => {
     const [selecedCountry, setSelectedCountry] = React.useState(jobData  ? jobData.country.id : countries[0].id);
     const cities = useCities([selecedCountry]);
 
-    const { control, handleSubmit, watch, setValue } = useForm({
+    const { control, handleSubmit, watch, setValue, getValues } = useForm({
         defaultValues: {
           title: jobData ? jobData.title : '',
           sector: jobData ? jobData.sector : sectors[0],
@@ -27,7 +27,9 @@ const JobForm = ({ handleClose, handleAddNewJob, jobData = null }) => {
     }, [watch("country")]);
 
     React.useEffect(() => {
-        setValue("city", cities[0]);
+        if (!cities.find((c) => c.id == getValues().city.id)) {
+            setValue("city", cities[0]);
+        }
     }, [cities]);
 
     return (
