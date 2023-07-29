@@ -2,8 +2,13 @@ div.container {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  main {
+  main.layoutMain {
     flex-grow: 1;
-    padding: 1rem;
+    padding: 0rem;
+  }
+  @media (min-width: 700px) {
+    main.layoutMain {
+      padding: 1rem;
+    }
   }
 }

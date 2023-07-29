@@ -2,14 +2,15 @@
     border: 1px solid rgb(43, 94, 138);
     background-color: white;
     margin-bottom: 1rem;
-    padding: 0.5rem;
+    padding: 0.2rem;
     display: flex;
-    gap: 1rem;
+    gap: 0.5rem;
     width: 100%;
     img {
-        width: 7rem;
+        width: 5rem;
         height: 7rem;
         background-position: center;
+        object-fit: cover;
     }
 }
 
@@ -19,7 +20,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 0.4rem;
+    gap: 0.3rem;
 }
 
 .description {
@@ -44,5 +45,25 @@
     gap: 0.5rem;
     svg {
       cursor: pointer;
+    }
+}
+
+@media (min-width: 700px) {
+    .container {
+        padding: 0.5rem;
+        gap: 1rem;
+        img {
+            width: 7rem;
+            height: 7rem;
+        } 
+    }
+
+    .content {
+        flex-grow: 1;
+        width: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 0.4rem;
     }
 }

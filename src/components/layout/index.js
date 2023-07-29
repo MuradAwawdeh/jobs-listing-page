@@ -13,7 +13,7 @@ export default function Layout({ children }) {
         </Head>
         <div className={styles.container}>
           <Header />
-          <main style={{ height: 0 }}>{children}</main>
+          <main className={styles.layoutMain} style={{ height: 0 }}>{children}</main>
         </div>
       </>
     )
