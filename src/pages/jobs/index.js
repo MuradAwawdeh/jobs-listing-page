@@ -73,7 +73,7 @@ export default function Jobs() {
                     {Math.ceil(jobsData.total / PAGE_SIZE ) > 1 && !busy && <Pagination currentPage={page} totalPages={Math.ceil(jobsData.total / PAGE_SIZE )} handlePageChange={handlePageChange} />}
                 </main>
             </div>
-            <Modal title={selectedJob ? selectedJob.title : "Add New Job Post"} isShown={jobsModalShown} onClose={() => setJobsModalShown(false)}>
+            <Modal key={jobsModalShown} title={selectedJob ? selectedJob.title : "Add New Job Post"} isShown={jobsModalShown} onClose={() => setJobsModalShown(false)}>
                 <JobForm handleClose={() => setJobsModalShown(false)} handleAddNewJob={handleAddNewJob} jobData={selectedJob} />
             </Modal>
             <Modal title="Filters" isShown={filtersModalShown} onClose={() => setFiltersModalShown(false)}>
