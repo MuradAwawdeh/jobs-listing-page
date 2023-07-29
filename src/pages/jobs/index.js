@@ -7,22 +7,21 @@ import Pagination from "@/components/general/Pagination.js";
 import Filters from "@/components/jobs/Filters.js";
 import Modal from "@/components/general/Modal.js";
 import JobForm from "@/components/jobs/JobForm.js";
+import LoadingSpinner from "@/components/general/LoadingSpinner.js";
 import { PAGE_SIZE } from '@/constants';
-import { useRouter } from 'next/router';
 
 export default function Jobs() {
-    const {query, push} = useRouter();
-    const [jobsModalShown, setJobsModalShown] = React.useState(false);
-    const [filtersModalShown, setFiltersModalShown] = React.useState(false);
-    const [selectedJob, setSelectedJob] = React.useState(null);
-    const { busy, jobsData, addNewJob} = useFetchJobs();
     const filters = React.useRef({
-        page: 1,
+        // page: 1,
         name: "",
         sectors: [],
         countries: [],
         cities: []
     });
+    const [jobsModalShown, setJobsModalShown] = React.useState(false);
+    const [filtersModalShown, setFiltersModalShown] = React.useState(false);
+    const [selectedJob, setSelectedJob] = React.useState(null);
+    const { busy, jobsData, addNewJob, removeJob, applyFilters, page, setPage} = useFetchJobs();
 
     const handleJobSelected = (job) => {
         setSelectedJob(job);
@@ -30,37 +29,33 @@ export default function Jobs() {
     };
 
     const handleJobRemoved = (job) => {
-        console.log(job);
+        removeJob(job, filters.current);
     };
 
     const handleAddNewJob = (job) => {
-        addNewJob(job);
+        addNewJob(job, filters.current);
         setJobsModalShown(false);
     };
 
     const handlePageChange = (page) => {
-        filters.current.page = page;
-        applyFilters();
+        setPage(page);
     };
 
     const handleNameFilterChange = (name) => {
         filters.current.name = name;
-        applyFilters();
+        applyFilters(filters.current);
     };
 
     const handleFiltersChange = (filtersState) => {
         filters.current.sectors = filtersState.sectors;
         filters.current.countries = filtersState.countries;
         filters.current.cities = filtersState.cities;
-        applyFilters();
+        applyFilters(filters.current);
     };
 
-    const applyFilters = () => {
-        // console.log(filters.current);
-        push({
-            query: filters.current
-        });
-    };
+    React.useEffect(() => {
+        applyFilters(filters.current);
+    }, []);
 
     return (
         <>
@@ -70,9 +65,12 @@ export default function Jobs() {
                 </aside>
                 <main>
                     <JobsHeaderBar handleNameFilterChange={handleNameFilterChange} onAddJobClicked={() => {setSelectedJob(null);setJobsModalShown(true)}} onFiltersClicked={() => setFiltersModalShown(true)} />
-                    {jobsData.jobs.length && !busy > 0 && <JobsList jobs={jobsData.jobs} onJobSelected={handleJobSelected} onJobRemoved={handleJobRemoved} />}
-                    {busy && <div>loading ...</div>}
-                    <Pagination currentPage={jobsData.page} totalPages={2} handlePageChange={handlePageChange} />
+                    {jobsData.jobs.length > 0 && !busy > 0 && <JobsList jobs={jobsData.jobs} onJobSelected={handleJobSelected} onJobRemoved={handleJobRemoved} />}
+                    {jobsData.jobs.length == 0 && !busy > 0 && (
+                        <div className={styles.noJobs}>No Jobs Found!</div>
+                    )}
+                    {busy && <LoadingSpinner />}
+                    {Math.ceil(jobsData.total / PAGE_SIZE ) > 1 && !busy && <Pagination currentPage={page} totalPages={Math.ceil(jobsData.total / PAGE_SIZE )} handlePageChange={handlePageChange} />}
                 </main>
             </div>
             <Modal title={selectedJob ? selectedJob.title : "Add New Job Post"} isShown={jobsModalShown} onClose={() => setJobsModalShown(false)}>

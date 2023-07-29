@@ -24,7 +24,7 @@ const Filters = ({ handleFiltersChange }) => {
 
     const [citiesCheckboxesState, setCitiesCheckboxesState] = React.useState(new Array(cities.length).fill(false));
     const handleCitiesChange = (i) => {
-        console.log(i);
+        // console.log(i);
         // console.log(citiesCheckboxesState);
         const updatedCheckboxState = citiesCheckboxesState.map((item, index) => index === i ? !item : item);
         setCitiesCheckboxesState(updatedCheckboxState);
