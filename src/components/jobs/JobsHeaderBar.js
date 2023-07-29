@@ -31,6 +31,9 @@ const JobsHeaderBard = ({ handleNameFilterChange, onAddJobClicked, onFiltersClic
             input {
                 flex-grow: 1;
                 padding-left: 1rem;
+                box-shadow: 0 1px 4px rgba(0,0,0,.23922);
+                border-radius: 6px;
+                border: none;
             }
             .add-title {
               display: none;
