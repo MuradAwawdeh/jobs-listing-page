@@ -50,7 +50,6 @@ const useFetchJobs = (filters) => {
     };
 
     const applyFilters = (filters) => {
-        console.log(filters);
         getJobs(filters);
     };
 
