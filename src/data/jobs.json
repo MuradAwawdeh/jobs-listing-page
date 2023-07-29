@@ -32,5 +32,175 @@
         "name": "Computer Software"
     },
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries."
+  },
+  {
+    "id": 3,
+    "title": "Junior Frontend Developer",
+    "country": {
+        "id": 1,
+        "name": "Palestine"
+    },
+    "city": {
+        "id": 5,
+        "name": "Nablus"
+    },
+    "sector": {
+        "id": 1,
+        "name": "Computer Software"
+    },
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries."
+  },
+  {
+    "id": 4,
+    "title": "Sales Representative",
+    "country": {
+        "id": 2,
+        "name": "Jordan"
+    },
+    "city": {
+        "id": 2,
+        "name": "Amman"
+    },
+    "sector": {
+        "id": 2,
+        "name": "Sales"
+    },
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries."
+  },
+  {
+    "id": 5,
+    "title": "Adminstrative Manager",
+    "country": {
+        "id": 4,
+        "name": "Saudi Arabia"
+    },
+    "city": {
+        "id": 4,
+        "name": "Riyadh"
+    },
+    "sector": {
+        "id": 4,
+        "name": "Administration"
+    },
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries."
+  },
+  {
+    "id": 6,
+    "title": "Senior Software Engineer",
+    "country": {
+        "id": 1,
+        "name": "Palestine"
+    },
+    "city": {
+        "id": 1,
+        "name": "Ramallah"
+    },
+    "sector": {
+        "id": 1,
+        "name": "Computer Software"
+    },
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries."
+  },
+  {
+    "id": 7,
+    "title": "Frontend Developer II",
+    "country": {
+        "id": 1,
+        "name": "Palestine"
+    },
+    "city": {
+        "id": 1,
+        "name": "Ramallah"
+    },
+    "sector": {
+        "id": 1,
+        "name": "Computer Software"
+    },
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries."
+  },
+  {
+    "id": 8,
+    "title": "Junior Backend Developer",
+    "country": {
+        "id": 1,
+        "name": "Palestine"
+    },
+    "city": {
+        "id": 5,
+        "name": "Nablus"
+    },
+    "sector": {
+        "id": 1,
+        "name": "Computer Software"
+    },
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries."
+  },
+  {
+    "id": 9,
+    "title": "Senior Sales Representative",
+    "country": {
+        "id": 2,
+        "name": "Jordan"
+    },
+    "city": {
+        "id": 2,
+        "name": "Amman"
+    },
+    "sector": {
+        "id": 2,
+        "name": "Sales"
+    },
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries."
+  },
+  {
+    "id": 10,
+    "title": "Director of Administration",
+    "country": {
+        "id": 4,
+        "name": "Saudi Arabia"
+    },
+    "city": {
+        "id": 4,
+        "name": "Riyadh"
+    },
+    "sector": {
+        "id": 4,
+        "name": "Administration"
+    },
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries."
+  },
+  {
+    "id": 11,
+    "title": "Fullstack Engineer",
+    "country": {
+        "id": 1,
+        "name": "Palestine"
+    },
+    "city": {
+        "id": 5,
+        "name": "Nablus"
+    },
+    "sector": {
+        "id": 1,
+        "name": "Computer Software"
+    },
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries."
+  },
+  {
+    "id": 12,
+    "title": "Integration Engineer",
+    "country": {
+        "id": 1,
+        "name": "Palestine"
+    },
+    "city": {
+        "id": 1,
+        "name": "Ramallah"
+    },
+    "sector": {
+        "id": 1,
+        "name": "Computer Software"
+    },
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries."
   }
 ]

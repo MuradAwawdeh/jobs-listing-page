@@ -17,6 +17,11 @@
     {
         "id": 4,
         "countryId": 4,
-        "name": "Riyad"
+        "name": "Riyadh"
+    },
+    {
+        "id": 5,
+        "countryId": 1,
+        "name": "Nablus"
     }
 ]

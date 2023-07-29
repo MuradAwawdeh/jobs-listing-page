@@ -14,14 +14,24 @@ export default function Jobs() {
     const {query, push} = useRouter();
     const [jobsModalShown, setJobsModalShown] = React.useState(false);
     const [filtersModalShown, setFiltersModalShown] = React.useState(false);
+    const [selectedJob, setSelectedJob] = React.useState(null);
     const { busy, jobsData, addNewJob} = useFetchJobs();
     const filters = React.useRef({
         page: 1,
-        name: null,
+        name: "",
         sectors: [],
         countries: [],
         cities: []
     });
+
+    const handleJobSelected = (job) => {
+        setSelectedJob(job);
+        setJobsModalShown(true);
+    };
+
+    const handleJobRemoved = (job) => {
+        console.log(job);
+    };
 
     const handleAddNewJob = (job) => {
         addNewJob(job);
@@ -52,10 +62,6 @@ export default function Jobs() {
         });
     };
 
-    React.useEffect(() => {
-        // console.log(query);
-    }, [query]);
-
     return (
         <>
             <div className={styles.container}>
@@ -63,14 +69,14 @@ export default function Jobs() {
                     <Filters handleFiltersChange={handleFiltersChange} />
                 </aside>
                 <main>
-                    <JobsHeaderBar handleNameFilterChange={handleNameFilterChange} onAddJobClicked={() => setJobsModalShown(true)} onFiltersClicked={() => setFiltersModalShown(true)} />
-                    {jobsData.jobs.length && !busy > 0 && <JobsList jobs={jobsData.jobs} />}
+                    <JobsHeaderBar handleNameFilterChange={handleNameFilterChange} onAddJobClicked={() => {setSelectedJob(null);setJobsModalShown(true)}} onFiltersClicked={() => setFiltersModalShown(true)} />
+                    {jobsData.jobs.length && !busy > 0 && <JobsList jobs={jobsData.jobs} onJobSelected={handleJobSelected} onJobRemoved={handleJobRemoved} />}
                     {busy && <div>loading ...</div>}
                     <Pagination currentPage={jobsData.page} totalPages={2} handlePageChange={handlePageChange} />
                 </main>
             </div>
-            <Modal title="Add New Job Post" isShown={jobsModalShown} onClose={() => setJobsModalShown(false)}>
-                <JobForm handleClose={() => setJobsModalShown(false)} handleAddNewJob={handleAddNewJob} />
+            <Modal title={selectedJob ? selectedJob.title : "Add New Job Post"} isShown={jobsModalShown} onClose={() => setJobsModalShown(false)}>
+                <JobForm handleClose={() => setJobsModalShown(false)} handleAddNewJob={handleAddNewJob} jobData={selectedJob} />
             </Modal>
             <Modal title="Filters" isShown={filtersModalShown} onClose={() => setFiltersModalShown(false)}>
                 <Filters handleFiltersChange={handleFiltersChange} />
